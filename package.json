@@ -1,0 +1,15 @@
+{
+  "name": "skyline-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Portfolio template: a WebGL skyline where every tower is a result, an ETL replay and a SQLite console.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "npx --yes serve@14.2.4 public -l 8080"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10",
+    "three": "0.186.1"
+  }
+}

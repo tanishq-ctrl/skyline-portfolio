@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>@@TITLE@@</title>
+<meta name="description" content="@@DESCRIPTION@@">
+<meta name="theme-color" content="#0E1330">
+<link rel="canonical" href="@@SITE@@/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="@@SITE@@/">
+<meta property="og:title" content="@@TITLE@@">
+<meta property="og:description" content="@@DESCRIPTION@@">
+<meta property="og:image" content="@@SITE@@/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/big-shoulders.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=@@VERSION@@">
+<script type="application/ld+json">
+@@JSONLD@@
+</script>
+<script type="module" src="/assets/app.js?v=@@VERSION@@"></script>
+</head>
+<body>
+<a class="skip" href="#experience">Skip to experience</a>
+
+<header class="nav" data-nav>
+  <a class="mark" href="#top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4" height="9" fill="#86B6E0"/><rect x="10" y="3" width="4" height="18" fill="#FFB45E"/><rect x="17" y="8" width="4" height="13" fill="#EE8FB0"/></svg>
+    <span>@@FULLNAME@@</span>
+  </a>
+  <nav aria-label="Sections">
+    <a href="#experience">Experience</a>
+    <a href="#work">Work</a>
+    <a href="#query">Query</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="cv" href="@@CV@@" download>CV <span>(PDF)</span></a>
+</header>
+
+<main>
+<section class="hero" id="top" aria-labelledby="hero-name">
+  <div class="stage" data-stage>
+    <canvas class="sky" aria-hidden="true"></canvas>
+    <div class="chart-overlay" aria-hidden="true"></div>
+    <div class="tip" hidden></div>
+    <div class="hero-copy">
+      <h1 id="hero-name" class="name" aria-label="@@FULLNAME@@">@@NAME@@</h1>
+      <p class="lede">@@LEDE@@</p>
+      <p class="hint">Each tower on the waterfront is a result from my work. Hover one, or keep scrolling.</p>
+    </div>
+    <div class="chart-copy" aria-hidden="true">
+      <p class="chart-title">The skyline was a bar chart.</p>
+      <p>One tower per result, grouped by employer. Height is the number’s order of magnitude, so each gridline is ten times the one below.</p>
+      <ul class="legend">@@LEGEND@@</ul>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><span></span></div>
+  </div>
+  <ol class="sr-only" aria-label="Results shown in the skyline">
+@@METRICS@@
+  </ol>
+</section>
+
+<section class="sec" id="experience" aria-labelledby="exp-h">
+  <div class="sec-head">
+    <h2 id="exp-h">Where the numbers came from</h2>
+    <p>Three years across training, brokerage and development. Each row keeps the colour of its towers in the skyline.</p>
+  </div>
+  <ol class="ledger">
+@@LEDGER@@
+  </ol>
+</section>
+
+<section class="sec pipe" id="pipeline" aria-labelledby="pipe-h" data-pipeline>
+  <div class="sec-head">
+    <h2 id="pipe-h">800 spreadsheets in, one database out</h2>
+    <p>At Beta Realty the lead data sat in 800 spreadsheets, each laid out differently, and finding one record could take days. This replays the pipeline I built, slowed down so you can watch it work.</p>
+  </div>
+  <div class="pipe-box">
+    <canvas role="img" aria-label="Animation: files of different layouts move through five stages and fill a database"></canvas>
+    <div class="pipe-bar">
+      <button class="btn" type="button" data-run>Run the pipeline</button>
+      <dl class="pipe-stats">
+        <div><dt>Files read</dt><dd data-files>0</dd></div>
+        <div><dt>Records loaded</dt><dd data-records>0.0M</dd></div>
+        <div><dt>Time to find a record</dt><dd data-time>days</dd></div>
+      </dl>
+    </div>
+  </div>
+  <ol class="pipe-steps">
+    <li><b>Extract.</b> Read every workbook and every sheet in it.</li>
+    <li><b>Map columns.</b> Detect each file’s layout and map it onto one schema.</li>
+    <li><b>Clean.</b> Fix types and formats so values can be compared.</li>
+    <li><b>Remove duplicates.</b> Apply the agreed matching rules.</li>
+    <li><b>Load.</b> Write the validated records to one database, with lead priority attached.</li>
+  </ol>
+  <p class="note">The share of duplicates in the replay is illustrative. Replace the file count and record total with your own.</p>
+</section>
+
+<section class="sec" id="work" aria-labelledby="work-h">
+  <div class="sec-head">
+    <h2 id="work-h">Things I built that people use</h2>
+    <p>Each one replaced a manual process at the company that asked for it. Public tools link to the live site. Internal tools are described without screenshots.</p>
+  </div>
+  <div class="works">
+@@WORK@@
+  </div>
+  <div class="internal">
+    <div class="internal-head">
+      <h3>Internal tools</h3>
+      <p>These hold company data, so there are no screenshots. Here is what each one does.</p>
+    </div>
+    <ul class="internal-list">
+@@INTERNAL@@
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="query" aria-labelledby="q-h" data-console>
+  <div class="sec-head">
+    <h2 id="q-h">Ask my career a question</h2>
+    <p>A real SQLite database, compiled to WebAssembly and running in this tab, built from the same facts as this page. Pick a question or write your own SQL.</p>
+  </div>
+  <div class="console">
+    <div class="c-side">
+      <p class="c-label" id="q-presets">Questions</p>
+      <div class="presets" role="group" aria-labelledby="q-presets" data-presets></div>
+      <p class="c-label" id="q-tables">Tables</p>
+      <ul class="schema" aria-labelledby="q-tables" data-schema></ul>
+    </div>
+    <div class="c-main">
+      <label class="sr-only" for="sql">SQL query</label>
+      <textarea id="sql" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" rows="6"></textarea>
+      <div class="c-bar">
+        <button class="btn" type="button" data-run>Run query</button>
+        <kbd>Ctrl or ⌘ + Enter</kbd>
+        <p class="c-status" role="status" data-status></p>
+      </div>
+      <div class="c-results" data-results tabindex="0" aria-label="Query results"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="skills" aria-labelledby="s-h" data-matrix>
+  <div class="sec-head">
+    <h2 id="s-h">Tools, and where I used them</h2>
+    <p>A dot means real work, not a course. Point at one to see what I did with it there.</p>
+  </div>
+  <div class="matrix-grid">
+    <div class="matrix-wrap">
+@@MATRIX@@
+    </div>
+    <aside class="evidence" aria-live="polite" data-evidence>
+      <p class="ev-empty">Point at a dot, or tab to one, to see the evidence.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="sec" id="study" aria-labelledby="st-h">
+  <div class="sec-head">
+    <h2 id="st-h">Study and certificates</h2>
+    <p>Economics first, then data science.</p>
+  </div>
+  <div class="study">
+    <ul class="degrees">@@EDUCATION@@</ul>
+    <ul class="certs">@@CERTS@@</ul>
+  </div>
+</section>
+
+<section class="sec contact" id="contact" aria-labelledby="c-h">
+  <div class="sec-head">
+    <h2 id="c-h">Make me an offer</h2>
+    <p>Hiring for a data role? Fill in the blanks and your email app opens with the note drafted. Or skip the form and write to me.</p>
+  </div>
+  <div class="offer">
+    <form class="offer-form" data-offer>
+      <label>Company <input name="company" autocomplete="organization" placeholder="Your company"></label>
+      <label>Role <input name="role" placeholder="@@ROLE@@"></label>
+      <label>Your name <input name="name" autocomplete="name" placeholder="Optional"></label>
+      <button class="btn" type="submit">Send this offer</button>
+      <p class="form-note">Nothing is sent from this page. The button opens a draft in your own email app.</p>
+    </form>
+    <article class="sheet" aria-label="Offer preview">
+      <header>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4" height="9" fill="#2E5C8A"/><rect x="10" y="3" width="4" height="18" fill="#C9781C"/><rect x="17" y="8" width="4" height="13" fill="#B4466E"/></svg>
+        <p class="sheet-title">Sales offer</p>
+        <p class="sheet-ref">Ref. TP-2026</p>
+      </header>
+      <dl>
+        <div><dt>Unit</dt><dd>@@FULLNAME@@</dd></div>
+        <div><dt>Unit type</dt><dd data-o="role">@@ROLE@@</dd></div>
+        <div><dt>Offered by</dt><dd data-o="company">Your company</dd></div>
+        <div><dt>Location</dt><dd>@@CITY@@, @@COUNTRYNAME@@</dd></div>
+        <div><dt>Handover</dt><dd>After a 1-month notice period</dd></div>
+        <div><dt>Visa</dt><dd>Work visa, standard transfer</dd></div>
+        <div><dt>Fittings</dt><dd>SQL, Python, Power BI, ETL</dd></div>
+        <div><dt>Price</dt><dd>On request</dd></div>
+      </dl>
+      <p class="sheet-sign">Prepared for <span data-o="name">you</span></p>
+    </article>
+  </div>
+  <ul class="direct">
+    <li><a href="mailto:@@EMAIL@@">@@EMAIL@@</a></li>
+    <li><a href="@@PHONEHREF@@">@@PHONE@@</a></li>
+    <li><a href="@@LINKEDIN@@" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="@@GITHUB@@" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="@@CV@@" download>Download CV (PDF)</a></li>
+  </ul>
+</section>
+</main>
+
+<footer class="foot">
+  <p>Built by hand. The skyline is generated in WebGL with Three.js, and the query console runs SQLite compiled to WebAssembly. No trackers, no cookies.</p>
+  <p>© @@YEAR@@ @@FULLNAME@@</p>
+</footer>
+</body>
+</html>

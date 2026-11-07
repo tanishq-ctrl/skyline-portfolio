@@ -1,0 +1,14 @@
+# The site is prebuilt: `npm run build` writes public/, and public/ is committed.
+[build]
+  publish = "public"
+  command = "echo 'Prebuilt site, nothing to build'"
+
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/vendor/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
